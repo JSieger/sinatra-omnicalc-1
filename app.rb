@@ -51,3 +51,7 @@ get("/payment/results") do
 
   erb(:new_payment_results)
 end
+
+get("/random/new") do 
+
+end
