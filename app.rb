@@ -39,7 +39,7 @@ end
 get("/payment/results") do
   @user_apr = params.fetch("user_apr").to_f
   @user_years = params.fetch("user_years").to_i
-  @user_pv = params.fetch("user_pv").to_f
+  @user_pv = (params.fetch("user_pv").to_f).round(2)
 
   r = (@user_apr / 100.0) / 12.0
   n = @user_years * 12
@@ -47,7 +47,7 @@ get("/payment/results") do
   top = @user_pv * r
   bottom = 1 - ((1 + r) ** (-n))
 
-  @payment = top / bottom
+  @payment = (top / bottom).round(2)
 
   erb(:new_payment_results)
 end
