@@ -42,11 +42,12 @@ get("/payment/results") do
   @user_pv = params.fetch("user_pv").to_f
 
   r = (@user_apr / 100.0) / 12.0
-  n = user_years * 12
+  n = @user_years * 12
 
   top = @user_pv * r
   bottom = 1 - ((1 + r) ** (-n))
 
   @payment = top / bottom
 
+  erb(:new_payment_results)
 end
