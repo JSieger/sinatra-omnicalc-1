@@ -22,7 +22,7 @@ get("/square_root/new") do
 end
 
 get("/square_root/results") do
-  @users_number = params.fetch("users_number").to_i
+  @users_number = params.fetch("users_number").to_f
 
   @square_root = @users_number ** 0.5
 
