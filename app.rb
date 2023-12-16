@@ -35,3 +35,12 @@ end
 get("/payment/new") do
   erb(:new_payment_calc)
 end
+
+get("/payment/results") do
+  @user_apr = params.fetch("user_apr").to_f
+  @user_years = params.fetch("user_years").to_i
+  @user_pv = params.fetch("user_pv").to_f
+
+  
+
+end
