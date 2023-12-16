@@ -31,3 +31,7 @@ get("/square_root/results") do
 
   erb(:sqrt_results)
 end
+
+get("/payment/new") do
+
+end
