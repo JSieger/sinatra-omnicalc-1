@@ -29,5 +29,5 @@ get("/square_root/results") do
 
   @square_root = @users_number ** 0.5
 
-  erb(:square_results)
+  erb(:sqrt_results)
 end
