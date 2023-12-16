@@ -62,4 +62,5 @@ get("/random/results") do
 
   @random = rand(@user_min..@user_max)
 
+  erb(:random_results)
 end
